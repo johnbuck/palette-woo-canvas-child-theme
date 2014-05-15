@@ -1,0 +1,107 @@
+// Tablet & Small Desktop Stylesheet 
+
+/* General Styles
+-------------------------------*/
+// Top
+#top {
+	display: none !important;
+}
+
+// Header connect area
+.header-social aside#connect .social {
+	text-align: center;
+	margin-top: 10%;
+}
+
+.header-social aside#connect {
+	width: 100%;
+}
+
+// Set logo size
+#logo {
+	text-align: center;
+}
+
+// Don't let the content display and mess up the margins
+#loopedSlider .content {
+	display: none;
+}
+
+.home .call-to-action .threecol-one {
+	text-align: center;
+	margin-top: 1em;
+}
+
+.home .call-to-action .the-call {
+	line-height: 1em;
+	font-size: 27px;
+}
+
+#custom-home-features {
+	margin-bottom: 2em;
+}
+
+/* Features Styles
+-------------------------------*/
+
+#home-features {
+	margin-bottom: 2.5em;
+}
+
+#home-features .widget_woothemes_features .feature {
+	padding: 5%;
+	margin-bottom: 0;
+}
+
+#home-testimonials {
+	padding: 2.5em;
+	margin-bottom: 2em;
+}
+
+// Contact Form styling
+#home-contact form .col-right {
+   float: none;
+   width: 100%;
+}
+ 
+#home-contact form .col-right input {
+   width: 100%;
+   margin: 0 0 1em;
+   display: block;
+}
+
+#home-contact form .col-right input[type="text"] {
+	width: 88%;
+}
+
+#home-contact form textarea {
+	float: none;
+	width: 88%;
+}
+
+/* Testimonials Styles */
+#home-testimonials {
+	
+	.quote {
+		.testimonials-text {
+			text-align: center;
+		}
+		
+		.avatar {
+			display: block;
+			clear: both;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		.author {
+			text-align: center;
+			width: 100%;
+		}	
+	}	
+}
+
+// Footer
+#footer.col-full {
+	text-align: center;
+}

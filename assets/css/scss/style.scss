@@ -1,0 +1,147 @@
+/*!
+Theme Name: Palette
+Theme URI: http://pancakecreative.com/child-theme-starter-kit
+Version: 0.02
+Description: The palette theme is a fully-customizable child theme for sites on the subscribdev network. It is built for use with the Canvas theme from WooThemes, and provides the tools for the creation of amazing and functional websites. 
+Author: John Buckingham
+Author URI: http://pancakecreative.com
+Author Email: john@pancakecreative.com
+License: GNU General Public License v3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Template: canvas
+*/
+
+/* Import Standard Styles
+---------------------------------------------------------------------------------- */
+
+/* Replace the example theme with the appropriate naem of your parent theme
+and path to the main stylesheet of your parent theme. */
+@import url( '../canvas/style.css' );
+
+/* uncomment the line below to enable child theme right-to-left language support */
+/* @import url( '../exampletheme/rtl.css' ); */
+
+// import normalize
+// @import "partials/normalize";
+
+// import mixins
+// @import "partials/mixins";
+
+// import grid
+// @import "partials/grid";
+
+// import headshrinker CSS
+@import "partials/headshrinker";
+
+// import magnific popup CSS
+@import "partials/magnific";
+
+// import global CSS
+@import "partials/global";
+
+/* Here there be media queries
+--------------------------------------------------------------------------------- */
+
+/* Large viewing size
+   This is for the larger monitors and possibly full screen viewers. */
+@media only screen and (min-width: 1240px) {
+
+	// styles in 1240up.scss
+	@import "partials/1240up";
+
+}
+
+/* Desktop
+   This is the average viewing window. So Desktops, Laptops, and
+   in general anyone not viewing on a mobile device. */
+@media (min-width: 980px)  {
+	
+	// styles in 980up.scss
+	@import "partials/980up";
+
+}
+
+
+/* Landscape Tablets and up
+   So Desktops, Laptops, and in general anyone not viewing on a
+   mobile device. */
+@media only screen and (min-width:768px) {
+
+	// styles in 768up.scss
+	@import "partials/768up";
+
+}
+
+/* Tablet & Smaller Laptops
+   This is the average viewing window. So Desktops, Laptops, and
+   in general anyone not viewing on a mobile device. */
+@media only screen and (max-width: 767px) {
+
+	// styles in 767down.scss
+	@import "partials/767down";
+	
+}
+
+/* Larger Mobile Devices
+   This is for devices like the Galaxy Note or something that's larger than
+   an iPhone but smaller than a tablet. Let's call them "phablets. */
+@media (max-width: 480px) {
+	
+	// styles in 480down.scss
+	@import "partials/480down";
+	
+}
+
+/* Mobiles
+   Just your standard mobile phone. */
+@media screen and (max-width: 320px) {
+	
+	// styles in 320down.scss
+	@import "partials/320down";
+	
+}
+
+/*	Retina (HiDPI) Display
+    http://www.quirksmode.org/blog/archives/2013/06/devicepixelrati.html
+-------------------------------------------------------------- */
+@media 
+    only screen and (-moz-min-device-pixel-ratio:1.5), 
+    only screen and (-o-min-device-pixel-ratio:3/2), 
+    only screen and (-webkit-min-device-pixel-ratio:1.5), 
+    only screen and (min-device-pixel-ratio:1.5) {
+    
+	// styles in 2x.scss
+	@import "partials/2x";
+	
+}
+
+/* iPhone 5 Media Query
+   Want to get fancy for no good reason? Knock yourself out.
+-------------------------------------------------------------- */
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  
+  // iPhone 5 or iPod Touch 5th generation styles (you can include your own file if you want)
+  
+}
+
+/* Print Styles
+   Feel free to customize this. Remember to add things that won't make
+   sense to print at the bottom. Things like nav, ads, and forms should
+   be set to display none.
+-------------------------------------------------------------- */
+@media print {
+
+	// styles in print.scss
+	@import "partials/print";
+
+}
+
+
+
+
+
+
+
+
+
+
