@@ -1,4 +1,4 @@
-# Example Child Theme Kit
+# Palette Child Theme for Canvas by WooThemes
 
 ## Description
 
