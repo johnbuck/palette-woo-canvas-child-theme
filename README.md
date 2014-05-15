@@ -2,7 +2,23 @@
 
 ## Description
 
-This is a child theme for WooThemes canvas originally inspired by the Child Theme Kit created by 8bit. This is not a standalone theme, it requires a parent theme. Specifically, it requires the Canvas Theme by WooThemes.
+Let's face it. WooThemes Canvas is a nice basic framework for building out a site, but it leaves a lot to be desired in the bells & whistles department.
+
+Originally inspired by the Child Theme Kit created by 8bit. Palette is a child theme for the WooThemes Canvas theme, and attempts to provide a framework for sprucing up the Canvas home page a little.
+
+Palette includes support and styling for:
+* Testimonials by WooThemes
+* Features by WooThemes
+* Our Team by WooThemes
+* Projects by WooThemes (in progress)
+* WooSlider by WooThemes (paid plugin)
+* Gravity Forms (in progress)
+
+It also integrates the Font Awesome icons into the WooThemes features section, and relies heavily on Advanced Custom Fields for various functionality.
+
+Palette also extends the WooThemes Options framework and seeks to make Canvas more flexible and wonderful.
+
+This is not a standalone theme, it requires a parent theme. Specifically, it requires the Canvas Theme by WooThemes.
 
 ## Installation
 
@@ -28,9 +44,9 @@ Sorry, no details here. Just skip to the FTP option.
 
 ## Usage
 
-Find the ```style.css``` file for the Standard Child Theme Kit and locate the "Customizations" section. You can add your own styles in the Theme Optoins to override the styles that come with Palette.
+Customize Canvas through the Canvas Theme Options You can add your own styles in the ```Custom CSS``` section of the Theme Options to override any styles that aren't readily manipulable in the Palette options panel.
 
-If you happened to name the Canvas theme directory anything else besides "cavnas" when you installed the theme, you will need to update the "Template" name and the ```@import``` path in the Standard Child Theme Kit's ```style.css``` in order for it to work correctly.
+If you happened to name the Canvas theme directory anything else besides "canvas" when you installed the theme, you will need to update the "Template" name and the ```@import``` path in the Palette's ```style.css``` in order for it to work correctly.
 
 ## Frequently Asked Questions
 
