@@ -71,6 +71,12 @@ function palette_canvas_register_required_plugins() {
         ),
 
         array(
+            'name'      => 'Icons for Features',
+            'slug'      => 'icons-for-features',
+            'required'  => false,
+        ),
+
+        array(
             'name'      => 'Testimonials by WooThemes',
             'slug'      => 'testimonials-by-woothemes',
             'required'  => false,
@@ -85,6 +91,12 @@ function palette_canvas_register_required_plugins() {
         array(
             'name'      => 'Projects by WooThemes',
             'slug'      => 'projects-by-woothemes',
+            'required'  => false,
+        ),
+
+        array(
+            'name'      => 'Archives by WooThemes',
+            'slug'      => 'archives-by-woothemes',
             'required'  => false,
         ),
 

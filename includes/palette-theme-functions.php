@@ -32,9 +32,6 @@ function palette_theme_setup() {
 		add_action( 'wp_enqueue_scripts', 'palette_enqueue_styles' );
 	}
 
-	if ( ! is_admin() && get_option('palette_load_magnific_popup') == 'true' ) {
-		add_filter('the_content', 'add_lightbox_rel_replace');
-	}
 }
 
 /*-------------------------------------------------------------------------------------------------*/
@@ -162,18 +159,4 @@ function palette_enqueue_scripts() {
 
 	do_action( 'palette_enqueue_scripts' );
 } // End palette_enqueue_scripts()
-} // End function wrapper
-
-/*-------------------------------------------------------------------------------------------------*/
-/* Assign a ".magnific" class to all images in the WordPress content area 						   */
-/* http://ajtroxell.com/use-magnific-popup-with-wordpress-now/  								   */
-/*-------------------------------------------------------------------------------------------------*/
-if ( ! function_exists( 'add_lightbox_rel_replace' ) ) {
-function add_lightbox_rel_replace($content) {
-	global $post;
-	$pattern = "/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
-  	$replacement = '<a$1class="magnific" href=$2$3.$4$5$6</a>';
-    $content = preg_replace($pattern, $replacement, $content);
-    return $content;
-} // add_lightbox_rel_replace($content)
 } // End function wrapper

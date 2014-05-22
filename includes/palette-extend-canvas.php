@@ -20,14 +20,11 @@ if ( $woo_options['woo_slider_biz'] != 'true' && get_option('palette_woo_slider'
 	elseif ( get_option('palette_woo_slider_full') == 'true' ) {
 		add_action('woo_content_before', 'palette_display_woo_slider', 30);
 	}
+} elseif ( get_option('palette_alternate_slider') == 'true' ) {
+	add_action('woo_main_before', 'palette_alternate_slider', 30);
 }
 
-// Add slide just after the header and before the main navigation
-//if ( get_option('palette_woo_slider_header') == 'true' ) {
-//	add_action('woo_header_after', 'palette_display_woo_slider', 10);
-//}
-
-// Add banner before the content
+// Add banner either before the content or in the header
 if ( get_option('palette_main_banner') == 'true' ) {
 
 	if ( get_option('palette_customized_header') == 'true' ) {
@@ -37,8 +34,6 @@ if ( get_option('palette_main_banner') == 'true' ) {
 	}
 
 }
-
-
 
 // Put the CTA at the bottom of the page if the contact section is activated
 // If not, put it just after the features section
@@ -52,19 +47,8 @@ if ( get_option('palette_features_section') == 'true' && class_exists('Woothemes
 	add_action( 'woo_main_before', 'woo_palette_add_features_section', 40 );
 }
 
-//if ( get_option('palette_features_section') == 'true' && class_exists('Woothemes_Features') ) {
+if ( get_option('palette_portfolio_section') == 'true' ) {
 	add_action( 'woo_main_before', 'palette_add_portfolio_section', 40 );
-//	add_filter( 'body_class','palette_add_portfolio_class' );
-//	add_filter( 'woo_load_portfolio_js','palette_load_portfolio_js' );
-//	add_filter( 'woo_load_portfolio_css','palette_load_portfolio_css' );
-//}
-
-
-if ( class_exists('Woothemes_Features') && class_exists('ACF') && get_option('palette_feature_enable_fa') == 'true' ) {
-	add_action( 'wp_enqueue_scripts', 'palette_enqueue_font_awesome' );
-	add_action( 'init','palette_extend_features');
-	add_filter( 'woothemes_features_item_template', 'palette_use_font_awesome_feature_image', 10, 2);
-	add_filter( 'woothemes_features_template', 'palette_add_font_awesome_image', 10, 2);
 }
 
 if ( get_option('palette_testimonials_section') == 'true' && class_exists('Woothemes_Testimonials') ) {
@@ -112,8 +96,8 @@ if ( ! function_exists('palette_add_frontend_scripts') ) {
 
 		// Sticky header
 		$js = '<script>';
-		$js .= 'jQuery(document).ready(function () { jQuery("#top").headshrinker({ zindex: 9995 }); });';
-		$js .= 'window.scrollReveal = new scrollReveal();';
+		//$js .= 'jQuery(document).ready(function () { jQuery("#top").headshrinker({ zindex: 9995 }); });';
+		//$js .= 'window.scrollReveal = new scrollReveal();';
 		$js .= '</script>';
 	
 		// Echo out the code
@@ -215,64 +199,6 @@ function woo_palette_add_features_section() {
 		get_template_part( 'includes/templates/home-features' );
 	}
 } // woo_palette_add_features_section()
-} // END function wrapper
-
-/*-----------------------------------------------------------------------------------*/
-/* Extend the Features plugin to also use Font Awesome 4.0 Icons */
-/* http://docs.woothemes.com/document/docs-features-plugin/ */
-/*-----------------------------------------------------------------------------------*/
-
-// Filter the feature HTML template to add a font awesome icon
-if ( ! function_exists( 'palette_font_awesome_feature_image' ) ) {
-function palette_use_font_awesome_feature_image( $tpl, $args) {
-	if ( is_front_page() ) {
-		$image = '%%NEWIMAGE%%';
-		$class = '%%CLASS%%';
-		$tpl = '<div class="' . $class . '">' . $image . '<h3 class="feature-title">%%TITLE%%</h3><div class="feature-content">%%CONTENT%%</div></div>';
-		return $tpl;
-	}
-} // palette_use_font_awesome_feature_image( $tpl, $args)
-} // END function wrapper
-
-// If the no image is set, use the font awesome icon selected instead. If neither is set, don't display anything
-if ( ! function_exists( 'palette_add_font_awesome_image' ) ) {
-function palette_add_font_awesome_image( $template, $post) {
-	if ( is_front_page() ) {
-		$icon = get_field('palette_fa_icon_select');
-		$size = get_option('palette_feature_icon_size');
-		$class = 'slide';
-
-		if ( $icon && $size ) {
-			$image = '<div class="fa-icon-wrap"><i class="fa ' . $icon . ' ' . $size . '"></i></div>';
-		}
-		// Optionally display the icon or image, if it is available.
-		if ( $image ) {
-			$template = str_replace( '%%NEWIMAGE%%', $image, $template );
-		} elseif ( $post->image && ! $image  ) {
-			$template = str_replace( '%%NEWIMAGE%%', $post->image, $template );
-		} else {
-			$template = str_replace( '%%NEWIMAGE%%', '', $template );
-		}
-
-		$template = str_replace( '%%NEWCLASS%%', $class, $template );
-		return $template;
-	}
-} // palette_add_font_awesome_image( $template, $post)
-} // END function wrapper
-
-// Register and load font awesome CSS files using a CDN.
-if ( ! function_exists( 'palette_enqueue_font_awesome' ) ) {
-function palette_enqueue_font_awesome() {
-	wp_enqueue_style( 'palette-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css', array(), '4.0.0' );
-} // palette_enqueue_font_awesome()
-} // END function wrapper
-
-// Add ACF custom fields to the Features custom post type
-// TODO: Include ACF in the child theme
-if ( ! function_exists( 'palette_extend_features' ) ) {
-function palette_extend_features() {
-	include get_stylesheet_directory() . '/includes/palette-acf-font-awesome.php';
-} // palette_extend_features()
 } // END function wrapper
 
 /*-------------------------------------------------------------------------------------------------*/

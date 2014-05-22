@@ -20,6 +20,8 @@ Palette also extends the WooThemes Options framework and seeks to make Canvas mo
 
 This is not a standalone theme, it requires a parent theme. Specifically, it requires the Canvas Theme by WooThemes.
 
+See a working demo at [subscribedev.com] (http://subscribedev.com/).
+
 ## Installation
 
 *Note: Canvas by WooThemes must be installed first for Palette to work correctly.*
@@ -51,7 +53,10 @@ If you happened to name the Canvas theme directory anything else besides "canvas
 ## Frequently Asked Questions
 
 ### Where can I find support?
-* This isn't really supported, but if you want help, you can shoot an email to john@pancakecreative.com.
+* I'm actively developing this theme, so let me know if you'd like to see a feature or find any issues. For help with something or to report a bug, feel free to shoot an email to john@pancakecreative.com.
+
+### How much does this theme cost?
+* This theme is currently in alpha, and will remain FREE until I've worked out all the kinks and cleaned up the code to sufficiently call it "marketable." At that point I'll probably request a nominal fee to help cover time spent developing updates and providing support.
 
 ## Credit
 
